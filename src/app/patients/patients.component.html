@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+
+
+<h2>My Patients</h2>
+<br>
+
+<ul class="patients">
+  <thead class="thead-inverse">
+  <tr>
+    <th>Patient</th>
+    <th>Name</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <li *ngFor="let patient of patients | async"
+        [class.selected]="patient === selectedPatient"
+      (click)="onSelect(patient)">
+      <td><img class="png-icon" src=a href="user.png" style="width: 64px; height: 32px;"></td>
+      <td>{{patient.name}}</td>
+  </li>
+  </tbody>
+
+</ul>
+
+<div *ngIf="selectedPatient" [hidden]="!chart">
+
+  <h2>{{ selectedPatient.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{selectedPatient.key}}</div>
+
+  <div *ngFor="let patientT of patientTemperature| async">
+    <div>{{patientT.key}}<span>  </span>{{patientT.value}}</div>
+  </div>
+
+</div>
+
+<div>
+<canvas id="line-chart" width="800" height="450">{{chart}}</canvas>
+</div>

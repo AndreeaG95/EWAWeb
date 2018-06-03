@@ -1,0 +1,51 @@
+.selected {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+.patients {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+.patients li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 2.6em;
+  border-radius: 4px;
+}
+
+.patients li.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
+.patients li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.patients .text {
+  position: relative;
+  top: -3px;
+  bottom: -3px;
+}
+
+.png-icon{
+  margin: 5px auto auto;
+  padding: 0;
+  display: inline-block;
+  background-repeat: no-repeat no-repeat;
+  pointer-events: none;
+}
+
+.thead-inverse{
+  background: #607D8B;
+  margin: .5em;
+  padding: .3em 0;
+  height: 2.6em;
+  border-radius: 4px;
+}

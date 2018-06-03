@@ -26,14 +26,14 @@ export class UserService {
     });
   }
 
-  updateCurrentUser(value){
+  updateCurrentUser(value) {
     return new Promise((resolve, reject) => {
       var user = firebase.auth().currentUser;
       user.updateProfile({
         displayName: value.name,
         photoURL: user.photoURL
       }).then(res => {
-        resolve(res)
+        resolve(res);
       }, err => reject(err));
     });
   }

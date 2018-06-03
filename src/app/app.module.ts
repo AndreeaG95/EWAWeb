@@ -15,13 +15,21 @@ import {UserService} from './core/user.service';
 import {AuthService} from './core/auth.service';
 import {UserProfileResolver} from './user-profile/user-profile.resolver';
 import { AppointmentsComponent } from './appointments/appointments.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { CalendarModule } from 'angular-calendar';
+import { DemoUtilsModule } from '../../demo-utils/module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PatientsComponent } from './patients/patients.component';
+import {PatientService} from './patients/patient.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserProfileComponent,
     UserLoginComponent,
-    AppointmentsComponent
+    AppointmentsComponent,
+    NavbarComponent,
+    PatientsComponent
   ],
   imports: [
     BrowserModule,
@@ -30,8 +38,11 @@ import { AppointmentsComponent } from './appointments/appointments.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    CalendarModule.forRoot(),
+    DemoUtilsModule,
+    BrowserAnimationsModule,
   ],
-  providers: [AuthService, UserService, UserProfileResolver, AuthGuard],
+  providers: [AuthService, UserService, PatientService, UserProfileResolver, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

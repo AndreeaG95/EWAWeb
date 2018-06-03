@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../core/auth.service';
 import {FirebaseUserModel} from '../core/user.model';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../core/user.service';
@@ -19,7 +18,6 @@ export class UserProfileComponent implements OnInit {
 
   constructor(
     public userService: UserService,
-    public authService: AuthService,
     private route: ActivatedRoute,
     private location: Location,
     private fb: FormBuilder
@@ -48,15 +46,6 @@ export class UserProfileComponent implements OnInit {
       .then(res => {
         console.log(res);
       }, err => console.log(err));
-  }
-
-  logout() {
-    this.authService.doLogout()
-      .then((res) => {
-        this.location.back();
-      }, (error) => {
-        console.log('Logout error', error);
-      });
   }
 
 }
