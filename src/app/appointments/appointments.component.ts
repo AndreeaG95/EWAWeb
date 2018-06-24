@@ -43,14 +43,14 @@ export class AppointmentsComponent implements OnInit {
 
   events: CalendarEvent[] = [
     {
-      title: 'Click me',
+      title: 'Ana',
       color: colors.yellow,
-      start: new Date()
+      start: this.viewDate
     },
     {
-      title: 'Or click me',
+      title: 'Maria',
       color: colors.blue,
-      start: new Date()
+      start: new Date(2018, 5, 1, 10)
     }
   ];
 

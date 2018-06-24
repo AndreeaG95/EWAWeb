@@ -10,7 +10,7 @@ import {$} from 'protractor';
 @Component({
   selector: 'app-patients',
   templateUrl: './patients.component.html',
-  styleUrls: ['./patients.component.css']
+  styleUrls: ['./patients.component.scss']
 })
 export class PatientsComponent implements OnInit, OnChanges {
 
@@ -98,7 +98,9 @@ export class PatientsComponent implements OnInit, OnChanges {
           {
             data: this.chartData,
             borderColor: '#3cba9f',
-            fill: false
+            fill: false,
+            pointRadius: 8,
+            borderDash: [5, 5]
           },
         ]
       },

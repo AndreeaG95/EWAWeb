@@ -1,39 +1,47 @@
 <app-navbar></app-navbar>
 
-
 <h2>My Patients</h2>
 <br>
 
 <ul class="patients">
-  <thead class="thead-inverse">
-  <tr>
-    <th>Patient</th>
-    <th>Name</th>
-  </tr>
-  </thead>
-
-  <tbody>
+  <nb-card size="'small'">
     <li *ngFor="let patient of patients | async"
         [class.selected]="patient === selectedPatient"
       (click)="onSelect(patient)">
-      <td><img class="png-icon" src=a href="user.png" style="width: 64px; height: 32px;"></td>
-      <td>{{patient.name}}</td>
-  </li>
-  </tbody>
-
+      <DIV>
+          <nb-user  [name]="patient.name" [title]="'Engineer'" size="large"></nb-user>
+      </DIV>
+    </li>
+  </nb-card>
 </ul>
 
 <div *ngIf="selectedPatient" [hidden]="!chart">
 
-  <h2>{{ selectedPatient.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{selectedPatient.key}}</div>
 
-  <div *ngFor="let patientT of patientTemperature| async">
-    <div>{{patientT.key}}<span>  </span>{{patientT.value}}</div>
+</div>
+
+<div  class="row">
+  <div class="col-sm-6">
+    <nb-card>
+      <nb-card-header style="background: bisque">Temperature</nb-card-header>
+      <nb-card-body>
+        <canvas id="line-chart" width="800" height="450">{{chart}}</canvas>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-sm-6">
+    <nb-card>
+      <nb-card-header style="background: #607D8B">Medicine</nb-card-header>
+      <nb-card-body>
+        <mat-list>
+          <mat-list>Ibuprofen</mat-list>
+          <mat-list>Paracetamol</mat-list>
+          <mat-list>Algocalmin</mat-list>
+        </mat-list>
+      </nb-card-body>
+    </nb-card>
   </div>
 
 </div>
 
-<div>
-<canvas id="line-chart" width="800" height="450">{{chart}}</canvas>
-</div>
+

@@ -21,6 +21,8 @@ import { DemoUtilsModule } from '../../demo-utils/module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PatientsComponent } from './patients/patients.component';
 import {PatientService} from './patients/patient.service';
+import {NbLayoutModule, NbSidebarModule, NbSidebarService, NbThemeModule, NbUserModule, NbCardModule, NbTabsetModule} from '@nebular/theme';
+import {MatTabsModule, MatListModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,7 @@ import {PatientService} from './patients/patient.service';
     UserLoginComponent,
     AppointmentsComponent,
     NavbarComponent,
-    PatientsComponent
+    PatientsComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,8 +43,16 @@ import {PatientService} from './patients/patient.service';
     CalendarModule.forRoot(),
     DemoUtilsModule,
     BrowserAnimationsModule,
+    NbThemeModule.forRoot({name: 'default'}),
+    NbLayoutModule,
+    NbSidebarModule,
+    NbUserModule,
+    NbCardModule,
+    NbTabsetModule,
+    MatTabsModule,
+    MatListModule
   ],
-  providers: [AuthService, UserService, PatientService, UserProfileResolver, AuthGuard],
+  providers: [AuthService, UserService, PatientService, UserProfileResolver, AuthGuard, NbSidebarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

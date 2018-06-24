@@ -1,10 +1,12 @@
-import {Injectable} from '@angular/core';
+import {Injectable, NgModule} from '@angular/core';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {Observable} from 'rxjs/Observable';
 import {PatientModel} from '../core/patient.model';
 import {PatientInfoModel} from '../core/patientInfo.model';
 import {TemperatureModel} from '../core/temperature.model';
+
+
 
 @Injectable()
 export class PatientService {

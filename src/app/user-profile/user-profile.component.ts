@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, NgModule, OnInit} from '@angular/core';
 import {FirebaseUserModel} from '../core/user.model';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../core/user.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, RouterModule} from '@angular/router';
 import {Location} from '@angular/common';
 
 @Component({
@@ -10,6 +10,7 @@ import {Location} from '@angular/common';
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss']
 })
+
 
 export class UserProfileComponent implements OnInit {
 
